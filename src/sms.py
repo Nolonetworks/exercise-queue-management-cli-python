@@ -1,7 +1,7 @@
 # Download the helper library from https://www.twilio.com/docs/python/install
 from twilio.rest import Client
 
-def send(body='HABLA MENOR', to=''):
+def send(mensaje):
     # Your Account Sid and Auth Token from twilio.com/console
     # DANGER! This is insecure. See http://twil.io/secure
     account_sid = 'AC926b5a2050c68868234a18cef47baa78'
@@ -10,11 +10,11 @@ def send(body='HABLA MENOR', to=''):
 
     message = client.messages \
                     .create(
-                        body=body,
+                        body=mensaje,
                         from_='+12029328811',
                         to='+56991345693'
                     )
 
     print(message.sid)
 
-send()
+send('hola')
